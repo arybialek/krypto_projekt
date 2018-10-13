@@ -15,6 +15,7 @@ import numpy as np
 from PIL import Image
 from collections import Counter
 import matplotlib.pyplot as plt
+
 ################################### Definicje funkcji ############################################
 
 def tekst_od_uzytkownika():
@@ -26,10 +27,8 @@ def tekst_od_uzytkownika():
         if any(znak in user_input for znak in znaki):
             print("\nWpisałeś polski znak! Proszę wpisać frazę bez polskich znaków.\n")
         else: 
-            loop = False  
-    
+            loop = False      
     return user_input
-
  
 
 def szyfrator():
@@ -100,13 +99,11 @@ def deszyfrator():
 
     decoded_message = " "
     for numb in ascii_numbs:
-        decoded_message += chr(int(numb))   
-
+        decoded_message += chr(int(numb))
     print("\nOdszyfrowana fraza: " + decoded_message + "\n")
 
 ############################### MENU ##################################
 print("\n-------------- Program typu szyfrator - deszyfrator -------------\n")
-
 print("\nZasada działania szyfratora: \n- zamiana ciągu liter wprowadzonego tekstu na reprezentację liczbową kodu ASCII" +
 "\n- wczytanie do kolumny macierzy (od dołu) odpowiedniej ilości jedynek " +
   "\n odpowiadającej wartości liczbowej kodu ASCII np. c = 67, to wpisujemy" +
@@ -136,6 +133,5 @@ while(loop):
             loop = False
         else:     
             print("\nWybrałeś inną wartość niż 1, 2 lub 3. Wybierz ponownie.\n")
-
     except ValueError:
         print("\nBłąd. Wpisz cyfrę!\n")    
